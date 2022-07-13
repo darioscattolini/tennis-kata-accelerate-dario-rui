@@ -11,11 +11,18 @@ class PlayerTest {
     @Test
     fun initialScoreForBothPlayersIs0() {
         val classUnderTest = Player()
-        Assertions.assertThat(classUnderTest.points).isEqualTo(0)
+        Assertions.assertThat(classUnderTest.score).isEqualTo(0)
     }
 
     @Test
-    fun increaseScore() {
+    fun scoreIsIncreasedByOne() {
+        val classUnderTest = Player()
 
+        // Ask for a better way to do it
+        for (i in 0..5) {
+            val previousScore = classUnderTest.score
+            classUnderTest.increaseScore()
+            Assertions.assertThat(classUnderTest.score).isEqualTo(previousScore + 1)
+        }
     }
 }
