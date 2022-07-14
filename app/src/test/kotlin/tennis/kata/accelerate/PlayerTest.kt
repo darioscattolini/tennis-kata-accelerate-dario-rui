@@ -4,7 +4,10 @@
 package tennis.kata.accelerate
 
 import org.assertj.core.api.Assertions
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
 
 class PlayerTest {
 
@@ -14,15 +17,17 @@ class PlayerTest {
         Assertions.assertThat(classUnderTest.score).isEqualTo(0)
     }
 
-    @Test
-    fun scoreIsIncreasedByOne() {
+    @ParameterizedTest()
+    @ValueSource(ints = [1, 2, 3, 4, 5])
+    fun scoreIsIncreasedByOne(timesScored: Int) {
         val classUnderTest = Player()
+        var previousScore = classUnderTest.score
 
-        // Ask for a better way to do it
-        for (i in 0..5) {
-            val previousScore = classUnderTest.score
+        for (i in 1..timesScored) {
+            previousScore = classUnderTest.score
             classUnderTest.increaseScore()
-            Assertions.assertThat(classUnderTest.score).isEqualTo(previousScore + 1)
         }
+
+        Assertions.assertThat(classUnderTest.score).isEqualTo(previousScore + 1)
     }
 }
