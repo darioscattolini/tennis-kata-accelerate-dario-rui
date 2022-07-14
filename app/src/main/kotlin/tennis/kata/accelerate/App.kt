@@ -19,18 +19,16 @@ class App {
             1 -> translatedScore = "15"
             2 -> translatedScore = "30"
             else -> {
-                translatedScore = if (player1.score >= 3 && player2.score >= 3) {
-                    if (player1.score == player2.score) {
+                translatedScore = if (player.score >= 3 && otherPlayer.score >= 3) {
+                    if (player.score == otherPlayer.score) {
                         "deuce"
-                    } else {
-                        if (player.score - otherPlayer.score == 1) {
-                            "advantage"
-                        } else if (player.score - otherPlayer.score == 2) {
-                            "game"
-                        } else "40"
-                    }
+                    } else if (player.score - otherPlayer.score == 1) {
+                        "advantage"
+                    } else if (player.score - otherPlayer.score == 2) {
+                        "game"
+                    } else "40"
                 } else {
-                    "40"
+                    if (player.score - otherPlayer.score == 2) "game" else "40"
                 }
             }
         }

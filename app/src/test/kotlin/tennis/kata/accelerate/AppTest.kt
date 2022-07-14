@@ -55,6 +55,16 @@ class AppTest {
     }
 
     @Test
+    fun returnGameForFourBeforeDeuce() {
+        val classUnderTest = App()
+        classUnderTest.player1.score = 2
+        classUnderTest.player2.score = 4
+
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("30")
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("game")
+    }
+
+    @Test
     fun returnDeuceForBothThree() {
         val classUnderTest = App()
         classUnderTest.player1.score = 3
