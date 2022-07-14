@@ -15,16 +15,22 @@ class App {
         var translatedScore: String = "love"
 
         when (player.score) {
+            0 -> translatedScore = "love"
             1 -> translatedScore = "15"
             2 -> translatedScore = "30"
-            3 -> translatedScore = if (player1.score != player2.score) "40" else "deuce"
             else -> {
-                if (
-                    player1.score >= 3 &&
-                    player2.score >= 3 &&
-                    player.score - otherPlayer.score == 1
-                ) {
-                    translatedScore = "advantage"
+                translatedScore = if (player1.score >= 3 && player2.score >= 3) {
+                    if (player1.score == player2.score) {
+                        "deuce"
+                    } else {
+                        if (player.score - otherPlayer.score == 1) {
+                            "advantage"
+                        } else if (player.score - otherPlayer.score == 2) {
+                            "game"
+                        } else "40"
+                    }
+                } else {
+                    "40"
                 }
             }
         }
