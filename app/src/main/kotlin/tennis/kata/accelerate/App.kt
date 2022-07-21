@@ -8,14 +8,14 @@ class App {
     val player2 = Player()
 
     // Ask for a better way to write parameter (enum?)
-    fun getScore(ofPlayer1: Boolean): String {
+    fun getScore(ofPlayer1: Boolean): Score {
         val player = if (ofPlayer1) player1 else player2
         val otherPlayer = if (ofPlayer1) player2 else player1
 
         var translatedScore = when (player.score) {
-            0 -> "love"
-            1 -> "15"
-            2 -> "30"
+            0 -> Score.LOVE
+            1 -> Score.FIFTEEN
+            2 -> Score.THIRTY
             else -> getScoreAfter30(player, otherPlayer)
         }
 
@@ -25,17 +25,17 @@ class App {
     private fun getScoreAfter30(
         scoringPlayer: Player,
         otherPlayer: Player
-    ): String {
+    ): Score {
         if (scoringPlayer.score >= 3 && otherPlayer.score >= 3) {
             return when (scoringPlayer.score - otherPlayer.score) {
-                0 -> "deuce"
-                1 -> "advantage"
-                2 -> "game"
-                else -> "40"
+                0 -> Score.DEUCE
+                1 -> Score.ADVANTAGE
+                2 -> Score.GAME
+                else -> Score.FORTY
             }
         }
 
-        return if (scoringPlayer.score - otherPlayer.score == 2) "game" else "40"
+        return if (scoringPlayer.score - otherPlayer.score == 2) Score.GAME else Score.FORTY
     }
 }
 

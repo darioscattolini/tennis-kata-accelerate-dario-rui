@@ -20,8 +20,8 @@ class AppTest {
         classUnderTest.player1.score = 0
         classUnderTest.player2.score = 0
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("love")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("love")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.LOVE)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.LOVE)
     }
 
     @Test
@@ -30,8 +30,8 @@ class AppTest {
         classUnderTest.player1.score = 1
         classUnderTest.player2.score = 1
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("15")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("15")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.FIFTEEN)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.FIFTEEN)
     }
 
     @Test
@@ -40,8 +40,8 @@ class AppTest {
         classUnderTest.player1.score = 2
         classUnderTest.player2.score = 2
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("30")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("30")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.THIRTY)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.THIRTY)
     }
 
     @Test
@@ -50,8 +50,8 @@ class AppTest {
         classUnderTest.player1.score = 2
         classUnderTest.player2.score = 3
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("30")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("40")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.THIRTY)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.FORTY)
     }
 
     @Test
@@ -60,8 +60,8 @@ class AppTest {
         classUnderTest.player1.score = 2
         classUnderTest.player2.score = 4
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("30")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("game")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.THIRTY)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.GAME)
     }
 
     @Test
@@ -70,8 +70,8 @@ class AppTest {
         classUnderTest.player1.score = 3
         classUnderTest.player2.score = 3
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("deuce")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("deuce")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.DEUCE)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.DEUCE)
     }
 
     @Test
@@ -80,8 +80,8 @@ class AppTest {
         classUnderTest.player1.score = 4
         classUnderTest.player2.score = 3
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("advantage")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("40")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.ADVANTAGE)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.FORTY)
     }
 
     @Test
@@ -90,8 +90,8 @@ class AppTest {
         classUnderTest.player1.score = 5
         classUnderTest.player2.score = 3
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("game")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("40")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.GAME)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.FORTY)
     }
 
     @Test
@@ -100,8 +100,8 @@ class AppTest {
         classUnderTest.player1.score = 4
         classUnderTest.player2.score = 4
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("deuce")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("deuce")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.DEUCE)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.DEUCE)
     }
 
     @Test
@@ -110,8 +110,8 @@ class AppTest {
         classUnderTest.player1.score = 5
         classUnderTest.player2.score = 4
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("advantage")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("40")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.ADVANTAGE)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.FORTY)
     }
 
     @Test
@@ -120,7 +120,7 @@ class AppTest {
         classUnderTest.player1.score = 6
         classUnderTest.player2.score = 4
 
-        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo("game")
-        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo("40")
+        Assertions.assertThat(classUnderTest.getScore(true)).isEqualTo(Score.GAME)
+        Assertions.assertThat(classUnderTest.getScore(false)).isEqualTo(Score.FORTY)
     }
 }
