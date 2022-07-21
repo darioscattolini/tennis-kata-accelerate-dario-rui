@@ -25,16 +25,17 @@ class App {
     private fun getScoreAfter30(
         scoringPlayer: Player,
         otherPlayer: Player
-    ) = if (scoringPlayer.score >= 3 && otherPlayer.score >= 3) {
-        if (scoringPlayer.score == otherPlayer.score) {
-            "deuce"
-        } else if (scoringPlayer.score - otherPlayer.score == 1) {
-            "advantage"
-        } else if (scoringPlayer.score - otherPlayer.score == 2) {
-            "game"
-        } else "40"
-    } else {
-        if (scoringPlayer.score - otherPlayer.score == 2) "game" else "40"
+    ): String {
+        if (scoringPlayer.score >= 3 && otherPlayer.score >= 3) {
+            return when (scoringPlayer.score - otherPlayer.score) {
+                0 -> "deuce"
+                1 -> "advantage"
+                2 -> "game"
+                else -> "40"
+            }
+        }
+
+        return if (scoringPlayer.score - otherPlayer.score == 2) "game" else "40"
     }
 }
 
