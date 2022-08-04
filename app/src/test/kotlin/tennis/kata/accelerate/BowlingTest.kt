@@ -40,4 +40,13 @@ class BowlingTest {
         assertThat(calculateScore("-5|23|--|4-|--|--|--|--|--|--||")).isEqualTo(14)
     }
 
+    @Test
+    fun strike() {
+        assertThat(calculateScore("X|--|--|--|--|--|--|--|--|--||")).isEqualTo(10)
+    }
+
+    @Test
+    fun nineAfterStrike() {
+        assertThat(calculateScore("X|9-|--|--|--|--|--|--|--|--||")).isEqualTo(28)
+    }
 }
