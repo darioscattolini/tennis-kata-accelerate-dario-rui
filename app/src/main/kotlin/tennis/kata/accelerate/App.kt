@@ -49,8 +49,9 @@ fun calculateScore(input: String): Int {
     val splitedFrames = convertedInput.split('|')
     var score = 0
     for (i in splitedFrames.indices) {
-        if (splitedFrames[i] == "X") score = 10 + splitedFrames[i+1][0].digitToInt()
-        else score += splitedFrames[i][0].digitToInt() + splitedFrames[i][1].digitToInt()
+        val frame = splitedFrames[i]
+        if (frame == "X") score = 10 + splitedFrames[i+1][0].digitToInt()
+        else score += frame[0].digitToInt() + frame[1].digitToInt()
     }
     return score
 
