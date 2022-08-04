@@ -45,7 +45,12 @@ fun main() {
 }
 
 fun calculateScore(input: String): Int {
-    val convertedInput = input.replace('-', '0')
-    return convertedInput[0].digitToInt() + convertedInput[1].digitToInt()
+    val convertedInput = input.replace('-', '0').dropLast(2)
+    val splitedFrames = convertedInput.split('|')
+    var score = 0
+    for (frame in splitedFrames) {
+        score += frame[0].digitToInt() + frame[1].digitToInt()
+    }
+    return score
 
 }
