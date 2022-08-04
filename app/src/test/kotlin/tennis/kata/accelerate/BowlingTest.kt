@@ -35,4 +35,9 @@ class BowlingTest {
         assertThat(calculateScore("--|--|--|4-|--|--|--|--|--|--||")).isEqualTo(4)
     }
 
+    @Test
+    fun threeScoringFrames() {
+        assertThat(calculateScore("-5|23|--|4-|--|--|--|--|--|--||")).isEqualTo(14)
+    }
+
 }
