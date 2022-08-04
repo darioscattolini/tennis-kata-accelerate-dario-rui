@@ -45,5 +45,10 @@ fun main() {
 }
 
 fun calculateScore(input: String): Int {
-    return if (input.first() == '-') 0 else input.first().digitToInt()
+    return when {
+        input[0] != '-' -> input[0].digitToInt()
+        input[1] != '-' -> input[1].digitToInt()
+        else -> 0
+    }
+
 }
