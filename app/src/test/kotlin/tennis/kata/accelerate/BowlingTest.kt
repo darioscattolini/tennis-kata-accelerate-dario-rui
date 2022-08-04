@@ -15,4 +15,9 @@ class BowlingTest {
         assertThat(calculateScore("1-|--|--|--|--|--|--|--|--|--||")).isEqualTo(1)
     }
 
+    @Test
+    fun threeHitsAtFirstAttempt() {
+        assertThat(calculateScore("3-|--|--|--|--|--|--|--|--|--||")).isEqualTo(3)
+    }
+
 }
