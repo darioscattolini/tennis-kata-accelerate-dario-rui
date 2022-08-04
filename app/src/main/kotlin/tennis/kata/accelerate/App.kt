@@ -37,8 +37,13 @@ class App {
 
         return if (scoringPlayer.score - otherPlayer.score == 2) Score.GAME else Score.FORTY
     }
+
 }
 
 fun main() {
     val app = App()
+}
+
+fun calculateScore(input: String): Int {
+    return 0
 }
