@@ -10,4 +10,9 @@ class BowlingTest {
         assertThat(calculateScore("--|--|--|--|--|--|--|--|--|--||")).isEqualTo(0)
     }
 
+    @Test
+    fun oneHitAtFirstAttempt() {
+        assertThat(calculateScore("1-|--|--|--|--|--|--|--|--|--||")).isEqualTo(1)
+    }
+
 }

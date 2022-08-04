@@ -45,5 +45,5 @@ fun main() {
 }
 
 fun calculateScore(input: String): Int {
-    return 0
+    return if (input.first() == '-') 0 else 1
 }
