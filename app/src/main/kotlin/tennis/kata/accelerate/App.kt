@@ -45,10 +45,7 @@ fun main() {
 }
 
 fun calculateScore(input: String): Int {
-    return when {
-        input[0] != '-' -> input[0].digitToInt()
-        input[1] != '-' -> input[1].digitToInt()
-        else -> 0
-    }
+    val convertedInput = input.replace('-', '0')
+    return convertedInput[0].digitToInt() + convertedInput[1].digitToInt()
 
 }

@@ -25,4 +25,9 @@ class BowlingTest {
         assertThat(calculateScore("-2|--|--|--|--|--|--|--|--|--||")).isEqualTo(2)
     }
 
+    @Test
+    fun twoHitsInFirstFrame(){
+        assertThat(calculateScore("23|--|--|--|--|--|--|--|--|--||")).isEqualTo(5)
+    }
+
 }
