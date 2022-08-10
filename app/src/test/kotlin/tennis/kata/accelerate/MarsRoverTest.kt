@@ -9,4 +9,9 @@ class MarsRoverTest {
     fun createInstanceOfMarsRover() {
         assertThat(MarsRover()).isNotNull()
     }
+
+    @Test
+    fun createInstanceOfMarsRoverWithPosition() {
+        assertThat(MarsRover(3,1).position).isEqualTo(Pair(3,1))
+    }
 }
