@@ -21,4 +21,10 @@ class MarsRoverTest {
         val marsRover = MarsRover(3,1, "N")
         assertThat(marsRover.direction).isEqualTo("N")
     }
+
+    @Test
+    fun moveForward() {
+        val marsRover = MarsRover(3,1, "N")
+        assertThat(marsRover.moveForward()).isEqualTo(Pair(3,0))
+    }
 }
