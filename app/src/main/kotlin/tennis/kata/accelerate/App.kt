@@ -4,55 +4,5 @@
 package tennis.kata.accelerate
 
 class App {
-    val player1 = Player()
-    val player2 = Player()
-
-    // Ask for a better way to write parameter (enum?)
-    fun getScore(ofPlayer1: Boolean): Score {
-        val player = if (ofPlayer1) player1 else player2
-        val otherPlayer = if (ofPlayer1) player2 else player1
-
-        var translatedScore = when (player.score) {
-            0 -> Score.LOVE
-            1 -> Score.FIFTEEN
-            2 -> Score.THIRTY
-            else -> getScoreAfter30(player, otherPlayer)
-        }
-
-        return translatedScore
-    }
-
-    private fun getScoreAfter30(
-        scoringPlayer: Player,
-        otherPlayer: Player
-    ): Score {
-        if (scoringPlayer.score >= 3 && otherPlayer.score >= 3) {
-            return when (scoringPlayer.score - otherPlayer.score) {
-                0 -> Score.DEUCE
-                1 -> Score.ADVANTAGE
-                2 -> Score.GAME
-                else -> Score.FORTY
-            }
-        }
-
-        return if (scoringPlayer.score - otherPlayer.score == 2) Score.GAME else Score.FORTY
-    }
-
-}
-
-fun main() {
-    val app = App()
-}
-
-fun calculateScore(input: String): Int {
-    val convertedInput = input.replace('-', '0').dropLast(2)
-    val splitedFrames = convertedInput.split('|')
-    var score = 0
-    for (i in splitedFrames.indices) {
-        val frame = splitedFrames[i]
-        if (frame == "X") score = 10 + splitedFrames[i+1][0].digitToInt()
-        else score += frame[0].digitToInt() + frame[1].digitToInt()
-    }
-    return score
 
 }
