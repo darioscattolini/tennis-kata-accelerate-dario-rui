@@ -12,11 +12,13 @@ class MarsRoverTest {
 
     @Test
     fun createInstanceOfMarsRoverWithPosition() {
-        assertThat(MarsRover(3,1).position).isEqualTo(Pair(3,1))
+        val marsRover = MarsRover(3,1, "N")
+        assertThat(marsRover.position).isEqualTo(Pair(3,1))
     }
 
     @Test
     fun createInstanceOfMarsRoverWithPositionAndDirection() {
-        assertThat(MarsRover(3,1, "N").direction).isEqualTo("N")
+        val marsRover = MarsRover(3,1, "N")
+        assertThat(marsRover.direction).isEqualTo("N")
     }
 }
