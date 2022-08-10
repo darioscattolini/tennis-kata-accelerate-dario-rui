@@ -24,7 +24,8 @@ class MarsRoverTest {
 
     @Test
     fun moveForward() {
-        val marsRover = MarsRover(3,1, "N")
+        val marsRover = MarsRover(3,2, "N")
+        assertThat(marsRover.moveForward()).isEqualTo(Pair(3,1))
         assertThat(marsRover.moveForward()).isEqualTo(Pair(3,0))
     }
 }
