@@ -9,7 +9,9 @@ class MarsRover(x: Int = 0, y: Int = 0, val direction: String = "N") {
     }
 
     fun moveForward(): Pair<Int, Int> {
-        position = Pair(position.first, position.second - 1)
+        if (direction == "N") position = Pair(position.first, position.second - 1)
+        else position = Pair(position.first + 1, position.second)
+
         return position
     }
 }
