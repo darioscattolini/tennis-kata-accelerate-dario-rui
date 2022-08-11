@@ -1,6 +1,6 @@
 package tennis.kata.accelerate
 
-class MarsRover(x: Int = 0, y: Int = 0, val direction: Direction = Direction.NORTH) {
+class MarsRover(x: Int = 0, y: Int = 0, var direction: Direction = Direction.NORTH) {
     var position = Pair(x, y)
 
     fun moveBackwards(): Pair<Int, Int> {
@@ -25,7 +25,12 @@ class MarsRover(x: Int = 0, y: Int = 0, val direction: Direction = Direction.NOR
     }
 
     fun turnLeft(): Direction {
-        return Direction.WEST
+        direction = when (direction) {
+            Direction.NORTH -> Direction.WEST
+            else -> Direction.SOUTH
+        }
+
+        return direction
     }
 
     enum class Direction {
