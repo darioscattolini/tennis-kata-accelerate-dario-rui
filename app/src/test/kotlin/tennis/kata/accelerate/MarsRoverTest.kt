@@ -86,4 +86,10 @@ class MarsRoverTest {
         assertThat(marsRover.turnLeft()).isEqualTo(MarsRover.Direction.EAST)
         assertThat(marsRover.turnLeft()).isEqualTo(MarsRover.Direction.NORTH)
     }
+
+    @Test
+    fun turnRight() {
+        val marsRover = MarsRover(0, 0, MarsRover.Direction.NORTH)
+        assertThat(marsRover.turnRight()).isEqualTo(MarsRover.Direction.EAST)
+    }
 }
