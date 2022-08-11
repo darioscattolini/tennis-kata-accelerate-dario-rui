@@ -38,6 +38,7 @@ class MarsRover(x: Int = 0, y: Int = 0, var direction: Direction = Direction.NOR
     fun turnRight(): Direction {
         direction = when (direction) {
             Direction.EAST -> Direction.SOUTH
+            Direction.SOUTH -> Direction.WEST
             else -> Direction.EAST
         }
 
