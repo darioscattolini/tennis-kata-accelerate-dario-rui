@@ -77,4 +77,10 @@ class MarsRoverTest {
         assertThat(marsRover.moveBackwards()).isEqualTo(Pair(3, 2))
         assertThat(marsRover.moveBackwards()).isEqualTo(Pair(3, 1))
     }
+
+    @Test
+    fun turnLeft() {
+        val marsRover = MarsRover(0, 0, MarsRover.Direction.NORTH)
+        assertThat(marsRover.turnLeft()).isEqualTo(MarsRover.Direction.WEST)
+    }
 }

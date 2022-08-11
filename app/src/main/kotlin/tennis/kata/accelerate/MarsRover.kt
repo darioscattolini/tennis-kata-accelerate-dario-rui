@@ -24,6 +24,10 @@ class MarsRover(x: Int = 0, y: Int = 0, val direction: Direction = Direction.NOR
         return position
     }
 
+    fun turnLeft(): Direction {
+        return Direction.WEST
+    }
+
     enum class Direction {
         NORTH, EAST, SOUTH, WEST
     }
