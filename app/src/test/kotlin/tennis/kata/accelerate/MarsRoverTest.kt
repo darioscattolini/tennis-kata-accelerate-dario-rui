@@ -93,5 +93,6 @@ class MarsRoverTest {
         assertThat(marsRover.turnRight()).isEqualTo(MarsRover.Direction.EAST)
         assertThat(marsRover.turnRight()).isEqualTo(MarsRover.Direction.SOUTH)
         assertThat(marsRover.turnRight()).isEqualTo(MarsRover.Direction.WEST)
+        assertThat(marsRover.turnRight()).isEqualTo(MarsRover.Direction.NORTH)
     }
 }
