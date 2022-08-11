@@ -4,7 +4,10 @@ class MarsRover(x: Int = 0, y: Int = 0, val direction: Direction = Direction.NOR
     var position = Pair(x, y)
 
     fun moveBackwards(): Pair<Int, Int> {
-        position = Pair(position.first - 1, position.second)
+        position = when (direction) {
+            Direction.EAST -> Pair(position.first - 1, position.second)
+            else -> Pair(position.first, position.second + 1)
+        }
         return position
     }
 
