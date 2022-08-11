@@ -28,6 +28,7 @@ class MarsRover(x: Int = 0, y: Int = 0, var direction: Direction = Direction.NOR
         direction = when (direction) {
             Direction.NORTH -> Direction.WEST
             Direction.SOUTH -> Direction.EAST
+            Direction.EAST -> Direction.NORTH
             else -> Direction.SOUTH
         }
 
