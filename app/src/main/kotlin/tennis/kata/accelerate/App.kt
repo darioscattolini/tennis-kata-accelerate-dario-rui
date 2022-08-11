@@ -5,6 +5,22 @@ package tennis.kata.accelerate
 
 class App {
     fun steerMarsRover(size: Int, position: String, instructions: String): String {
-        return "1 2 N"
+        val parameters = position.split(' ')
+        val direction = when (parameters[2]) {
+            "N" -> MarsRover.Direction.NORTH
+            else -> MarsRover.Direction.EAST
+        }
+        var marsRover = MarsRover(parameters[0].toInt(), parameters[1].toInt(), direction)
+
+        for (instruction in instructions) {
+            when (instruction) {
+                'L' -> marsRover.turnLeft()
+                'R' -> marsRover.turnRight()
+                'F' -> marsRover.moveForward()
+                'B' -> marsRover.moveBackwards()
+            }
+        }
+
+        return "${marsRover.position.first} ${marsRover.position.second} ${marsRover.direction.name[0]}"
     }
 }

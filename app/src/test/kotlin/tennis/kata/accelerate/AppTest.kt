@@ -13,4 +13,14 @@ class AppTest {
 
         assertThat(output).isEqualTo("1 2 N")
     }
+
+    @Test
+    fun marsRoverIsSteeredWithManyInstructions() {
+        val size = 100
+        val position = "50 50 N"
+        val instructions = "LFFLFLBRBBBLBLFFRB"
+        val output = App().steerMarsRover(size, position, instructions)
+
+        assertThat(output).isEqualTo("45 46 E")
+    }
 }
