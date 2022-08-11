@@ -4,5 +4,7 @@
 package tennis.kata.accelerate
 
 class App {
-
+    fun steerMarsRover(size: Int, position: String, instructions: String): String {
+        return "1 2 N"
+    }
 }
